@@ -17,7 +17,7 @@ export default function App () {
 
   const handleSubmit = () => {
     // Handle form submission logic here
-    console.log('Submitted SSN:', ssn);
+    console.log('Submitted SSN:asdfasdf', ssn);
     console.log('Submitted DOB:', dob);
   };
 
