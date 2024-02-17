@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import config from './amplifyconfiguration.json';
+Amplify.configure(config);
+
 import {Button, TextField, Grid, Typography} from '@mui/material';
 import Footer from './Footer';
 import MenuBar from './MenuBar';
 
-export default function App () {
+function App({ signOut, user }) {
   const [ssn, setSSN] = useState('');
   const [dob, setDOB] = useState(null);
 
@@ -64,3 +71,5 @@ export default function App () {
     </>
   );
 }
+
+export default withAuthenticator(App);
