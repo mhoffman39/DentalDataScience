@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dentaldatascience-dev-93136-authRole",
+      "UnauthRoleArn": "arn:aws:iam::211125421340:role/amplify-dentaldatascience-dev-93136-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::211125421340:role/amplify-dentaldatascience-dev-93136-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-dentaldatascience-dev-93136-deployment",
+      "UnauthRoleName": "amplify-dentaldatascience-dev-93136-unauthRole",
+      "StackName": "amplify-dentaldatascience-dev-93136",
+      "StackId": "arn:aws:cloudformation:us-west-2:211125421340:stack/amplify-dentaldatascience-dev-93136/67396590-cdba-11ee-aeec-0a7ed9c63f69",
+      "AmplifyAppId": "d1frt7fgozafsa"
+    },
+    "categories": {
+      "auth": {
+        "dentaldatascience44003027": {}
+      }
+    }
+  }
+}
