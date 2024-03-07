@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { uploadData } from 'aws-amplify/storage';
 import { Box, Button, Typography } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
@@ -23,8 +24,23 @@ export default function DragAndDrop () {
     console.log(files)
   };
   
-  const prepareUpload = () => {
-    console.log('clicked')
+  const prepareUpload = async (event) => {
+    const file = event.target.files[0];
+    const filename = event.target.files[0].name;
+
+    try {
+      const result = await uploadData({
+        key: filename,
+        data: file,
+        options: {
+          accessLevel: 'guest',
+          // onProgress // Optional progress callback.
+        }
+      }).result;
+      console.log('Succeeded: ', result);
+    } catch (error) {
+      console.log('Error : ', error);
+    }
   }
 
   const VisuallyHiddenInput = styled('input')({
@@ -67,7 +83,7 @@ export default function DragAndDrop () {
         variant="text"
         tabIndex={-1}
         startIcon={<CloudUploadIcon />}
-        onChange={prepareUpload}
+        onChange={(event) => prepareUpload(event)}
       >
         Upload file
         <VisuallyHiddenInput type="file" />
