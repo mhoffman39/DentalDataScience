@@ -1,0 +1,12 @@
+{
+  "resourceName": "csvFileStorage",
+  "policyUUID": "b1c53f23",
+  "bucketName": "aiv-solutions-csv-file-storage",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
