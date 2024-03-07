@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
-import { parseCsv } from './FileUploadUtils';
+import { Box, Button, Typography } from '@mui/material';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { styled } from '@mui/material/styles';
 
 export default function DragAndDrop () {
   const [dragging, setDragging] = useState(false);
@@ -19,13 +20,24 @@ export default function DragAndDrop () {
     e.preventDefault();
     setDragging(false);
     const files = Array.from(e.dataTransfer.files);
-    // console.log(files);
-    parseCsv(files)
+    console.log(files)
   };
   
-  const handleClick = () => {
+  const prepareUpload = () => {
     console.log('clicked')
   }
+
+  const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1,
+  });
 
   return (
     <Box
@@ -34,23 +46,32 @@ export default function DragAndDrop () {
         borderRadius:3,
         borderStyle: 'dashed',
         height: 100,
-        minWidth: 205, 
+        width: 400,
         textAlign: 'center',
-        
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
       onDragEnter={handleDragEnter}
       onDragOver={handleDragEnter}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
-      onClick={handleClick}
     >
-      <input
-        type="file"
-        hidden
-      />
-      <Typography variant="body1" color={dragging ? 'primary' : 'textSecondary'}>
+      <Typography variant="body1" color={dragging ? 'textsecondary' : 'primary'}>
         {dragging ? 'Drop files here' : 'Drag and drop files here, or click to select files'}
       </Typography>
+      <Button
+        component="label"
+        role={undefined}
+        variant="text"
+        tabIndex={-1}
+        startIcon={<CloudUploadIcon />}
+        onChange={prepareUpload}
+      >
+        Upload file
+        <VisuallyHiddenInput type="file" />
+      </Button>
     </Box>
   );
 };
