@@ -27,7 +27,7 @@ function App({ signOut, user }) {
           display: 'flex',
           justifyContent: 'center', 
           alignItems: 'center',  
-          backgroundColor: 'blue'
+          // backgroundColor: 'blue'
         }}>
         <DragAndDrop />
       </Grid>
