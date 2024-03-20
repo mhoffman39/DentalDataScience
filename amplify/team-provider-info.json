@@ -17,6 +17,12 @@
       },
       "storage": {
         "csvFileStorage": {}
+      },
+      "function": {
+        "parseCSV": {
+          "deploymentBucketName": "amplify-dentaldatascience-dev-93136-deployment",
+          "s3Key": "amplify-builds/parseCSV-533039445145367a3766-build.zip"
+        }
       }
     }
   }
