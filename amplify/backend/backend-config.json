@@ -25,6 +25,31 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "parseCSV": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_parseCSV_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "parseCSV"
+        }
+      ]
+    },
+    "AMPLIFY_function_parseCSV_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "parseCSV"
+        }
+      ]
+    }
+  },
   "storage": {
     "csvFileStorage": {
       "dependsOn": [],

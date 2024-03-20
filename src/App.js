@@ -16,7 +16,10 @@ function App({ signOut, user }) {
       <Grid item xs={12}>
         <MenuBar signOut={signOut} user={user} />
       </Grid>
-      <Grid item xs={3} sx={{mt:5, backgroundColor:'red'}}>
+      <Grid item xs={3} 
+        sx={{mt:5, 
+          // backgroundColor:'red'
+        }}>
         <Sidebar user={user} />
       </Grid>
       <Grid 
@@ -31,8 +34,9 @@ function App({ signOut, user }) {
         }}>
         <DragAndDrop />
       </Grid>
-      <Grid item xs={3} sx={{backgroundColor: 'yellow'}}>
-
+      <Grid item xs={3} 
+        // sx={{backgroundColor: 'yellow'}}
+      >
       </Grid>
     </Grid>
   );
